@@ -27,7 +27,59 @@ function readLine() {
 
 // Complete the catAndMouse function below.
 function catAndMouse(x, y, z) {
-  let win = x < z && z - x < z - y ? "Cat A" : y < z && z - x > z - y ? "Cat B" : x >= z || y >= z ? "Mouse C" : "";
+  let win = "";
+  if (y > z && x > z) {
+    if (x - z < y - z) {
+      win = "Cat A";
+      console.log("1");
+    } else if (x - z > y - z) {
+      win = "Cat B";
+      console.log("2");
+    } else {
+      win = "Mouse C";
+      console.log("3");
+    }
+  } else if (x < z && y < z) {
+    if (z - x < z - y) {
+      win = "Cat A";
+      console.log("4");
+    } else if (z - x > z - y) {
+      win = "Cat B";
+      console.log("5");
+    } else {
+      win = "Mouse C";
+      console.log("6");
+    }
+  } else if (x > z && y < z) {
+    if (x - z < z - y) {
+      win = "Cat A";
+      console.log("7");
+    } else if (x - z > z - y) {
+      win = "Cat B";
+      console.log("8");
+    } else {
+      win = "Mouse C";
+      console.log("9");
+    }
+  } else if (x < z && y > z) {
+    if (z - x < y - z) {
+      win = "Cat A";
+      console.log("10");
+    } else if (z - x > y - z) {
+      win = "Cat B";
+      console.log("11");
+    } else {
+      win = "Mouse C";
+      console.log("12");
+    }
+  } else if (x == z && y == z) {
+    win = "Mouse C";
+  } else if (x == z && (y > z || y < z)) {
+    win = "Cat A";
+  } else if (y == z && (x > z || x < z)) {
+    win = "Cat B";
+  }
+
   return win;
 }
 
